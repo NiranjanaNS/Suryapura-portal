@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  /* --- Suryapura design tokens --- */
+  --color-paper: #FBF5E9;      /* warm khadi-paper background */
+  --color-card: #FFFDF8;       /* soft card surface */
+  --color-ink: #1E2A22;        /* deep charcoal-green text */
+  --color-ink-soft: #4B5A4F;   /* muted body text */
+  --color-teal: #0F6B5C;       /* primary: agriculture / growth */
+  --color-teal-dark: #0A4E43;
+  --color-indigo: #1E3A5F;     /* secondary: governance / digital */
+  --color-marigold: #E8A33D;   /* accent: sun / harvest */
+  --color-marigold-soft: #F6D9A0;
+  --color-brick: #B5533C;      /* sparing use: alerts / emphasis */
+  --color-line: #E4D9C2;       /* hairline / divider on paper */
+
+  --font-display: "Poppins", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-devanagari: "Noto Sans Devanagari", "Poppins", sans-serif;
+}
+
+@theme inline {
+  --color-paper: var(--color-paper);
+  --color-card: var(--color-card);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-teal: var(--color-teal);
+  --color-teal-dark: var(--color-teal-dark);
+  --color-indigo: var(--color-indigo);
+  --color-marigold: var(--color-marigold);
+  --color-marigold-soft: var(--color-marigold-soft);
+  --color-brick: var(--color-brick);
+  --color-line: var(--color-line);
+  --font-sans: var(--font-body);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-devanagari {
+  font-family: var(--font-devanagari);
+}
+
+/* Subtle grain so the warm paper background doesn't read as flat/AI-default */
+.bg-grain {
+  background-image: radial-gradient(var(--color-line) 0.6px, transparent 0.6px);
+  background-size: 14px 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: var(--color-marigold-soft);
+  color: var(--color-teal-dark);
+}
