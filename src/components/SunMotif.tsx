@@ -31,6 +31,48 @@ export function SunMotif({
   );
 }
 
+/** Illustrated portrait of the fictional Village Development Ambassador — matches the hand-illustrated brand style, not a photo of a real person */
+export function LeaderPortrait({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 200 200" className={className} aria-hidden="true">
+      <circle cx="100" cy="100" r="100" fill="var(--color-marigold)" />
+      <circle cx="100" cy="100" r="100" fill="url(#leaderRing)" opacity="0.25" />
+      <defs>
+        <radialGradient id="leaderRing" cx="50%" cy="35%" r="70%">
+          <stop offset="0%" stopColor="#ffffff" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      {/* shoulders / kurta */}
+      <path d="M30,200 C30,150 60,122 100,122 C140,122 170,150 170,200 Z" fill="var(--color-teal-dark)" />
+      <path d="M30,200 C30,150 60,122 100,122 C140,122 170,150 170,200 Z" fill="none" stroke="#ffffff" strokeOpacity="0.15" strokeWidth="2" />
+      {/* collar */}
+      <path d="M82,124 L100,150 L118,124" fill="none" stroke="var(--color-marigold-soft)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+      {/* neck */}
+      <rect x="88" y="100" width="24" height="26" rx="8" fill="#C98B5E" />
+      {/* head */}
+      <ellipse cx="100" cy="76" rx="34" ry="38" fill="#D89A6A" />
+      {/* ears */}
+      <ellipse cx="66" cy="78" rx="6" ry="9" fill="#D89A6A" />
+      <ellipse cx="134" cy="78" rx="6" ry="9" fill="#D89A6A" />
+      {/* hair */}
+      <path d="M66,66 C66,38 84,24 100,24 C116,24 134,38 134,66 C134,50 122,40 100,40 C78,40 66,50 66,66 Z" fill="#2B2320" />
+      {/* moustache */}
+      <path d="M84,92 Q100,100 116,92 Q108,96 100,94 Q92,96 84,92 Z" fill="#2B2320" />
+      {/* eyes */}
+      <circle cx="86" cy="72" r="3.4" fill="#1E2A22" />
+      <circle cx="114" cy="72" r="3.4" fill="#1E2A22" />
+      {/* eyebrows */}
+      <path d="M79,63 Q86,58 93,62" stroke="#2B2320" strokeWidth="3" fill="none" strokeLinecap="round" />
+      <path d="M107,62 Q114,58 121,63" stroke="#2B2320" strokeWidth="3" fill="none" strokeLinecap="round" />
+      {/* smile */}
+      <path d="M90,86 Q100,92 110,86" stroke="#8a4a2a" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+      {/* turban band accent */}
+      <path d="M68,52 Q100,32 132,52" stroke="var(--color-brick)" strokeWidth="6" fill="none" strokeLinecap="round" opacity="0.85" />
+    </svg>
+  );
+}
+
 /** Layered village skyline used in the hero — fields, school, panchayat dome, solar poles */
 export function VillageSkyline({ className = "" }: { className?: string }) {
   return (

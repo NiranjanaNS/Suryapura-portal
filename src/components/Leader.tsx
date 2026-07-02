@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import { LeaderPortrait } from "./SunMotif";
 import { useLanguage, t } from "@/lib/language";
 
 export function Leader() {
@@ -17,10 +18,10 @@ export function Leader() {
           className="grid sm:grid-cols-[auto_1fr] gap-8 items-center"
         >
           <div
-            className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl flex items-center justify-center font-display font-bold text-3xl shrink-0"
-            style={{ background: "var(--color-marigold)", color: "var(--color-teal-dark)" }}
+            className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shrink-0 ring-2"
+            style={{ boxShadow: "0 0 0 3px var(--color-marigold-soft)" }}
           >
-            AS
+            <LeaderPortrait className="w-full h-full" />
           </div>
           <div>
             <Quote className="w-8 h-8 mb-3" style={{ color: "var(--color-marigold)" }} />

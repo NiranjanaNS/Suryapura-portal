@@ -1,17 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ImageIcon } from "lucide-react";
+import { Landmark } from "lucide-react";
 import { galleryItems } from "@/lib/data";
 import { SectionHeading } from "./SectionHeading";
 import { useLanguage, t } from "@/lib/language";
-
-const toneMap: Record<string, string> = {
-  teal: "var(--color-teal)",
-  marigold: "var(--color-marigold)",
-  indigo: "var(--color-indigo)",
-  brick: "var(--color-brick)",
-};
 
 export function Gallery() {
   const { lang } = useLanguage();
@@ -32,15 +25,36 @@ export function Gallery() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.4, delay: (i % 3) * 0.08 }}
-              className={`relative rounded-2xl overflow-hidden flex items-end p-4 ${
-                i === 0 ? "sm:col-span-2 sm:row-span-2 aspect-square sm:aspect-auto" : "aspect-square"
+              className={`group relative rounded-2xl overflow-hidden ${
+                item.large ? "sm:col-span-2 sm:row-span-2 aspect-square sm:aspect-auto" : "aspect-square"
               }`}
-              style={{
-                background: `linear-gradient(160deg, ${toneMap[item.tone]}, var(--color-ink))`,
-              }}
             >
-              <ImageIcon className="absolute top-4 right-4 w-5 h-5 text-white/50" />
-              <p className="relative text-white text-sm font-medium leading-snug">{item.label}</p>
+              {item.illustrated ? (
+                <div
+                  className="absolute inset-0 flex items-center justify-center"
+                  style={{ background: "linear-gradient(160deg, var(--color-indigo), var(--color-ink))" }}
+                >
+                  <Landmark className="w-12 h-12 text-white/40" />
+                </div>
+              ) : (
+                <img
+                  src={`https://images.unsplash.com/${item.photo}?w=900&q=80&auto=format&fit=crop`}
+                  alt={item.label}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              )}
+              <div
+                className="absolute inset-0 flex items-end p-4"
+                style={{ background: "linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.55) 100%)" }}
+              >
+                <div>
+                  <p className="text-white text-sm font-medium leading-snug">{item.label}</p>
+                  {item.credit && (
+                    <p className="text-white/60 text-[11px] mt-0.5">Photo: {item.credit} / Unsplash</p>
+                  )}
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

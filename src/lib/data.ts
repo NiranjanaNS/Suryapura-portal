@@ -93,12 +93,37 @@ export const stories = [
 ];
 
 export const galleryItems = [
-  { label: "Sunrise over the fields", tone: "teal" },
-  { label: "New primary school wing", tone: "marigold" },
-  { label: "District highway link road", tone: "indigo" },
-  { label: "Community health camp", tone: "brick" },
-  { label: "Solar micro-grid installation", tone: "teal" },
-  { label: "Panchayat Bhavan", tone: "indigo" },
+  {
+    label: "Village, seen from the hills",
+    photo: "photo-1735909600958-f442498875f9",
+    credit: "Rowan Heuvel",
+    large: true,
+  },
+  {
+    label: "Farmer at work in the paddy field",
+    photo: "photo-1751996766812-83144dfa42f9",
+    credit: "Ayrus Hill",
+  },
+  {
+    label: "Village school",
+    photo: "photo-1765994898026-4fa84ade4a61",
+    credit: "Ravi Sharma",
+  },
+  {
+    label: "Link road to the highway",
+    photo: "photo-1667552750375-030cb6cb71ea",
+    credit: "Raju Sharma",
+  },
+  {
+    label: "Solar micro-grid installation",
+    photo: "photo-1509391366360-2e959784a276",
+    credit: "American Public Power Association",
+  },
+  {
+    label: "Panchayat Bhavan",
+    illustrated: true,
+    tone: "indigo",
+  },
 ];
 
 export const news = [
